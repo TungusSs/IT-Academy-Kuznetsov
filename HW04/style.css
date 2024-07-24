@@ -1,0 +1,32 @@
+body {
+    background-image: url(back.jpg);
+}
+
+.headline {
+    text-align: center;
+    color: #1b4f72;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.firstContainer,
+.secondContainer,
+.thirdContainer {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+}
+
+.image {
+    border: 2px solid #1b4f72;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.text {
+    text-align: left;
+    font-size: 2rem;
+    color: #1b4f72;
+}
