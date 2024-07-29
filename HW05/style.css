@@ -1,0 +1,36 @@
+.frame-outer {
+    background: url(middle.png) repeat-y left;
+}
+
+.frame-inner {
+    background: url(middle.png) repeat-y right;
+}
+
+.frame-top {
+    background: url(middle-top.png) repeat-x top;
+}
+
+.frame-bottom {
+    background: url(middle-top.png) repeat-x bottom;
+}
+
+.corner-left-top {
+    background: url(left-top.png) no-repeat left top;
+}
+
+.corner-left-bottom {
+    background: url(left-bottom.png) no-repeat left bottom;
+}
+
+.corner-right-top {
+    background: url(right-top.png) no-repeat right top;
+}
+
+.content {
+    background: url(right-bottom.png) no-repeat right bottom;
+    padding: 50px;
+}
+
+p {
+    text-align: justify;
+}
