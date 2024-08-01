@@ -1,0 +1,101 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.main-content {
+    padding: 20px;
+    align-content: center;
+}
+
+.character {
+    margin-bottom: 10px;
+    overflow: hidden;
+    line-height: 80px;
+}
+
+.character img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.character span {
+    vertical-align: middle;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: black;
+    clear: both;
+}
+
+.book-container {
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.book-image {
+    float: left;
+    margin-right: 20px;
+}
+
+.book-image img {
+    max-width: 200px;
+    height: auto;
+}
+
+#firstBook {
+    background-color: #efddc5;
+}
+
+#secondBook {
+    background-color: #f0a7b7;
+}
+
+#thirdBook {
+    background-color: #bbb7b4;
+}
+
+.tableOfContent ol {
+    padding-left: 1rem;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    margin: 1rem;
+}
