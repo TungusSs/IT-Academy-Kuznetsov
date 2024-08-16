@@ -1,0 +1,24 @@
+/*! Стили для таблицы */
+table {
+    border-collapse: collapse;
+    border: 2px solid #008000; /*! Зеленая рамка вокруг доски */
+}
+
+/*! Стили для ячеек таблицы */
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+}
+
+/*! Окрашивание четных строк */
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: #000; /*! Черные клетки */
+}
+
+/*! Окрашивание нечетных строк */
+tr:nth-child(odd) td:nth-child(odd),
+tr:nth-child(even) td:nth-child(even) {
+    background-color: #fff; /*! Белые клетки */
+}
