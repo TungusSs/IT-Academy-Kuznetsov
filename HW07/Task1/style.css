@@ -18,6 +18,7 @@
     display: inline-block;
     margin-right: 10px;
 }
+
 .menu-inline-block a:not(:last-child)::after {
     content: "|";
     color: red;
@@ -30,10 +31,12 @@
     display: table;
     clear: both;
 }
+
 .menu-float a {
     float: left;
     margin-right: 10px;
 }
+
 .menu-float a:not(:last-child)::after {
     content: "|";
     color: red;
@@ -44,10 +47,12 @@
 .menu-flex {
     display: flex;
 }
+
 .menu-flex a:not(:last-child) {
     margin-right: 20px;
     position: relative;
 }
+
 .menu-flex a:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -56,4 +61,29 @@
     bottom: 0;
     width: 1px;
     background-color: red;
+}
+
+/* Стили для списка */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu-list li:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin: 0 10px;
+}
+
+/* Стили для таблицы */
+.menu-table {
+    border-collapse: collapse;
+}
+
+.menu-table td:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin: 0 10px;
 }

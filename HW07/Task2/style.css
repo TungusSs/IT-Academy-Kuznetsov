@@ -1,7 +1,6 @@
 /*! Стили для таблицы */
 table {
     border-collapse: collapse;
-    border: 2px solid #008000; /*! Зеленая рамка вокруг доски */
 }
 
 /*! Стили для ячеек таблицы */
@@ -20,5 +19,22 @@ tr:nth-child(odd) td:nth-child(even) {
 /*! Окрашивание нечетных строк */
 tr:nth-child(odd) td:nth-child(odd),
 tr:nth-child(even) td:nth-child(even) {
-    background-color: #fff; /*! Белые клетки */
+    background-color: #fff;
+}
+
+/*! Зеленая граница шахматной доски */
+tr:first-child td,
+tr:last-child td,
+td:first-child,
+td:last-child {
+    background-color: #90ee90 !important;
+    border-color: #90ee90;
+}
+
+/*! Окрашиваем углы доски */
+tr:first-child td:first-child,
+tr:first-child td:last-child,
+tr:last-child td:first-child,
+tr:last-child td:last-child {
+    background-color: #90ee90 !important;
 }
