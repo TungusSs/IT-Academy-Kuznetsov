@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Горизонтальное меню - Все варианты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--! Способ 1: Inline-block -->
+    <div class="menu-container menu-inline-block">
+        <!--! HTML-комментарий: Ссылки расположены в строку с помощью inline-block, разделители созданы с использованием псевдоэлемента ::after -->
+        <a href="#">первая ссылка</a>
+        <a href="#">вторая ссылка</a>
+        <a href="#">третья ссылка</a>
+        <a href="#">четвёртая ссылка</a>
+        <a href="#">пятая ссылка</a>
+    </div>
+
+    <!--! Способ 2: Float -->
+    <div class="menu-container menu-float">
+        <!--! HTML-комментарий: Ссылки расположены в строку с помощью float, разделители созданы с использованием псевдоэлемента ::after -->
+        <a href="#">первая ссылка</a>
+        <a href="#">вторая ссылка</a>
+        <a href="#">третья ссылка</a>
+        <a href="#">четвёртая ссылка</a>
+        <a href="#">пятая ссылка</a>
+    </div>
+
+    <!--! Способ 3: Flexbox -->
+    <div class="menu-container menu-flex">
+        <!--! HTML-комментарий: Ссылки расположены в строку с помощью flexbox, разделители созданы с использованием псевдоэлемента ::after и абсолютного позиционирования -->
+        <a href="#">первая ссылка</a>
+        <a href="#">вторая ссылка</a>
+        <a href="#">третья ссылка</a>
+        <a href="#">четвёртая ссылка</a>
+        <a href="#">пятая ссылка</a>
+    </div>
+
+    <!--! Вариант со списком -->
+    <div class="menu-container">
+        <ul class="menu-list">
+            <li><a href="#">первая ссылка</a></li>
+            <li><a href="#">вторая ссылка</a></li>
+            <li><a href="#">третья ссылка</a></li>
+            <li><a href="#">четвёртая ссылка</a></li>
+            <li><a href="#">пятая ссылка</a></li>
+        </ul>
+    </div>
+
+    <!--! Вариант с таблицей -->
+    <div class="menu-container">
+        <table class="menu-table">
+            <tr>
+                <td><a href="#">первая ссылка</a></td>
+                <td><a href="#">вторая ссылка</a></td>
+                <td><a href="#">третья ссылка</a></td>
+                <td><a href="#">четвёртая ссылка</a></td>
+                <td><a href="#">пятая ссылка</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+/*! Стили для таблицы */
+table.CHESS {
+    border-collapse: collapse;
+}
+
+/*! Стили для ячеек таблицы */
+table.CHESS td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+}
+
+/*! Окрашивание четных строк */
+table.CHESS tr:nth-child(even) td:nth-child(odd),
+table.CHESS tr:nth-child(odd) td:nth-child(even) {
+    background-color: #000; /* Черные клетки */
+}
+
+/*! Окрашивание нечетных строк */
+table.CHESS tr:nth-child(odd) td:nth-child(odd),
+table.CHESS tr:nth-child(even) td:nth-child(even) {
+    background-color: #fff;
+}
+
+/*! Зеленая граница шахматной доски */
+table.CHESS tr:first-child td,
+table.CHESS tr:last-child td,
+table.CHESS td:first-child,
+table.CHESS td:last-child {
+    background-color: #90ee90;
+    border-color: #90ee90;
+}
+
+/*! Увеличиваем вес селектора для граничных ячеек */
+table.CHESS tr:first-child td:nth-child(n),
+table.CHESS tr:last-child td:nth-child(n),
+table.CHESS tr:nth-child(n) td:first-child,
+table.CHESS tr:nth-child(n) td:last-child {
+    background-color: #90ee90;
+    border-color: gray;
+}
+
+/*! Окрашиваем углы доски */
+table.CHESS tr:first-child td:first-child,
+table.CHESS tr:first-child td:last-child,
+table.CHESS tr:last-child td:first-child,
+table.CHESS tr:last-child td:last-child {
+    background-color: #90ee90;
+    width: 25px;
+    height: 25px;
+}
+
+/*! Устанавливаем высоту для верхней и нижней строк */
+table.CHESS tr:first-child td,
+table.CHESS tr:last-child td {
+    height: 25px;
+}
+
+/*! Устанавливаем ширину для левого и правого столбцов */
+table.CHESS td:first-child,
+table.CHESS td:last-child {
+    width: 25px;
+}

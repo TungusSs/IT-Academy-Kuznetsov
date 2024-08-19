@@ -1,0 +1,89 @@
+/*! Общие стили для всех контейнеров */
+.menu-container {
+    margin-bottom: 20px;
+}
+
+/*! Стили для ссылок */
+.menu-container a {
+    text-decoration: underline;
+    color: green;
+}
+
+.menu-container a:hover {
+    color: red;
+}
+
+/*! Способ 1: Inline-block */
+.menu-inline-block a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.menu-inline-block a:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin-left: 10px;
+}
+
+/*! Способ 2: Float */
+.menu-float::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu-float a {
+    float: left;
+    margin-right: 10px;
+}
+
+.menu-float a:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin-left: 10px;
+}
+
+/*! Способ 3: Flexbox */
+.menu-flex {
+    display: flex;
+}
+
+.menu-flex a:not(:last-child) {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu-flex a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: red;
+}
+
+/* Стили для списка */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu-list li:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin: 0 10px;
+}
+
+/* Стили для таблицы */
+.menu-table {
+    border-collapse: collapse;
+}
+
+.menu-table td:not(:last-child)::after {
+    content: "|";
+    color: red;
+    margin: 0 10px;
+}
