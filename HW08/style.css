@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -36,31 +36,38 @@ nav ul li a {
 
 .hero {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
 .hero img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
 }
 
 .hero h1 {
     font-size: 36px;
     color: #006400;
-    margin-left: 20px;
 }
 
 .spa-packages {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .package {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.package:hover {
+    background-color: rgba(0, 100, 0, 0.1);
 }
 
 .package h2 {
@@ -115,7 +122,6 @@ nav ul li a {
         text-align: center;
     }
 }
-
 
 @media (max-width: 480px) {
     .spa-packages {
