@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма публикации статьи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label for="article-name">Название статьи:</label>
+                <input type="text" id="article-name" name="article-name" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Рубрика:</label>
+                <select id="category" name="category">
+                    <option value="programming">программирование</option>
+                    <option value="news">новости</option>
+                    <option value="games">игры</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Публикация:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="publication" value="website"> на сайте
+                    </label>
+                    <label>
+                        <input type="radio" name="publication" value="journal"> в журнале
+                    </label>
+                    <label>
+                        <input type="radio" name="publication" value="both"> на сайте и в журнале
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="allow-comments">
+                    Разрешить комментарии <input type="checkbox" id="allow-comments" name="allow-comments">
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="article-text">Текст статьи:</label>
+                <textarea id="article-text" name="article-text" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Опубликовать</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
