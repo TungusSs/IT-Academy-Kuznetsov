@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text {
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+.image-container {
+    height: 18.75rem;
+    position: relative;
+    margin-bottom: 12.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    position: absolute;
+    transition: z-index 0.3s, transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+#biohazard {
+    top: 10%;
+    left: 20%;
+}
+
+#man-and-woman {
+    top: 10%;
+    right: 20%;
+}
+
+#yin-and-yang {
+    bottom: -25%;
+    left: 38%;
+}
+
+#no-smoking {
+    top: 10%;
+    left: 35%;
+    z-index: 10;
+}
+
+.image:hover {
+    z-index: 20;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        height: 15rem;
+    }
+
+    .image {
+        max-width: 80%;
+    }
+
+    #biohazard {
+        top: 15%;
+        left: 10%;
+    }
+
+    #man-and-woman {
+        top: 15%;
+        right: 0%;
+    }
+
+    #yin-and-yang {
+        bottom: -60%;
+        left: 30%;
+    }
+
+    #no-smoking {
+        top: 20%;
+        left: 25%;
+    }
+}
