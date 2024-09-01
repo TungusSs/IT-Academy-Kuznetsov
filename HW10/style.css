@@ -17,14 +17,14 @@ body {
 }
 
 .image-container {
-    height: 18.75rem;
+    height: 25rem;
     position: relative;
-    margin-bottom: 12.5rem;
+    margin-bottom: 6.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 50rem;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -43,12 +43,12 @@ body {
 
 #man-and-woman {
     top: 10%;
-    right: 20%;
+    left: 60%;
 }
 
 #yin-and-yang {
-    bottom: -25%;
-    left: 38%;
+    bottom: 10%;
+    left: 40%;
 }
 
 #no-smoking {
@@ -60,34 +60,4 @@ body {
 .image:hover {
     z-index: 20;
     transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .image-container {
-        height: 15rem;
-    }
-
-    .image {
-        max-width: 80%;
-    }
-
-    #biohazard {
-        top: 15%;
-        left: 10%;
-    }
-
-    #man-and-woman {
-        top: 15%;
-        right: 0%;
-    }
-
-    #yin-and-yang {
-        bottom: -60%;
-        left: 30%;
-    }
-
-    #no-smoking {
-        top: 20%;
-        left: 25%;
-    }
 }
