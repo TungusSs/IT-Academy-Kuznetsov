@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text {
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+.image-container {
+    height: 25rem;
+    position: relative;
+    margin-bottom: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    position: absolute;
+    transition: z-index 0.3s, transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+#biohazard {
+    top: 10%;
+    left: 20%;
+}
+
+#man-and-woman {
+    top: 10%;
+    left: 60%;
+}
+
+#yin-and-yang {
+    bottom: 10%;
+    left: 40%;
+}
+
+#no-smoking {
+    top: 10%;
+    left: 35%;
+    z-index: 10;
+}
+
+.image:hover {
+    z-index: 20;
+    transform: scale(1.1);
+}
