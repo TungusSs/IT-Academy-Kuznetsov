@@ -90,6 +90,8 @@ nav a i,
     transform: translateY(-10px);
     transition: all 0.3s;
     z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .nav-item:hover .dropdown {
@@ -105,13 +107,29 @@ nav a i,
     text-decoration: none;
     white-space: nowrap;
     transition: background-color 0.3s;
-    border-radius: 10px;
 }
 
 .dropdown a:hover {
     background-color: #7ebaf0;
     color: white;
 }
+
+/* .dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
 
 .gallery {
     display: grid;
