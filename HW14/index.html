@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Задачи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Задачи</h1>
+        <button onclick="runTask1()">Задача 1: Площадь прямоугольника</button>
+        <button onclick="runTask2()">Задача 2: Декада месяца</button>
+        <button onclick="runTask3a()">Задача 3a: Анкета (if)</button>
+        <button onclick="runTask3b()">Задача 3b: Анкета (тернарный оператор)</button>
+    </div>
+</body>
+<script>
+    function runTask1() {
+        let length = prompt("Введите длину прямоугольника (от 1 до 10):");
+        let width = prompt("Введите ширину прямоугольника (от 1 до 10):");
+
+        length = Number(length);
+        width = Number(width);
+
+        if (isNaN(length) || isNaN(width) || length < 1 || length > 10 || width < 1 || width > 10) {
+            alert("Ошибка! Введите числа от 1 до 10.");
+        } else {
+            let area = length * width;
+            if (length === width) {
+                alert(`Площадь квадрата равна ${area}`);
+            } else {
+                alert(`Площадь прямоугольника равна ${area}`);
+            }
+        }
+    }
+
+    function runTask2() {
+        let day = prompt("Введите день месяца (от 1 до 31):");
+        day = Number(day);
+
+        if (isNaN(day) || day < 1 || day > 31) {
+            alert("Ошибка! Введите число от 1 до 31.");
+        } else {
+            let decade;
+            if (day <= 10) {
+                decade = "первую";
+            } else if (day <= 20) {
+                decade = "вторую";
+            } else {
+                decade = "третью";
+            }
+            alert(`День ${day} попадает в ${decade} декаду месяца.`);
+        }
+    }
+
+    function runTask3a() {
+        let lastName = prompt("Введите вашу фамилию:");
+        let firstName = prompt("Введите ваше имя:");
+        let middleName = prompt("Введите ваше отчество:");
+        let age = Number(prompt("Введите ваш возраст в годах:"));
+        let isMale = confirm("Ваш пол - мужской?");
+
+        let fullName = lastName + " " + firstName + " " + middleName;
+        let ageInDays = age * 365;
+        let futureAge = age + 5;
+        let gender;
+        let pensionStatus;
+
+        if (isMale) {
+            gender = "мужской";
+            if (age >= 65) {
+                pensionStatus = "да";
+            } else {
+                pensionStatus = "нет";
+            }
+        } else {
+            gender = "женский";
+            if (age >= 60) {
+                pensionStatus = "да";
+            } else {
+                pensionStatus = "нет";
+            }
+        }
+
+        alert(
+            "ваше ФИО: " + fullName + "\n" +
+            "ваш возраст в годах: " + age + "\n" +
+            "ваш возраст в днях: " + ageInDays + "\n" +
+            "через 5 лет вам будет: " + futureAge + "\n" +
+            "ваш пол: " + gender + "\n" +
+            "вы на пенсии: " + pensionStatus
+        );
+    }
+
+    function runTask3b() {
+        let lastName = prompt("Введите вашу фамилию:");
+        let firstName = prompt("Введите ваше имя:");
+        let middleName = prompt("Введите ваше отчество:");
+        let age = Number(prompt("Введите ваш возраст в годах:"));
+        let isMale = confirm("Ваш пол - мужской?");
+
+        let fullName = lastName + " " + firstName + " " + middleName;
+        let ageInDays = age * 365;
+        let futureAge = age + 5;
+        let gender = isMale ? "мужской" : "женский";
+        let pensionStatus = (isMale && age >= 65) || (!isMale && age >= 60) ? "да" : "нет";
+
+        alert(
+            "ваше ФИО: " + fullName + "\n" +
+            "ваш возраст в годах: " + age + "\n" +
+            "ваш возраст в днях: " + ageInDays + "\n" +
+            "через 5 лет вам будет: " + futureAge + "\n" +
+            "ваш пол: " + gender + "\n" +
+            "вы на пенсии: " + pensionStatus
+        );
+    }
+</script>
+
+</html>
