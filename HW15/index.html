@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ по JS циклам</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+        }
+
+        #matrixInputs,
+        #matrixOutput {
+            display: grid;
+            gap: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ДЗ по JS циклам</h1>
+
+    <div class="section">
+        <h1>Часть 1: Выбор книги</h1>
+        <p>Жанр:
+            <select id="genre">
+                <option value="1">Роман</option>
+                <option value="2">Детектив</option>
+                <option value="3">Фэнтези</option>
+            </select>
+        </p>
+        <p>Современная литература: <input type="checkbox" id="modern"></p>
+        <p>Русский автор: <input type="checkbox" id="russian"></p>
+        <button onclick="recommendBook()">Получить рекомендацию</button>
+        <p id="bookRecommendation"></p>
+    </div>
+
+    <div class="section">
+        <h1>Часть 2: Работа с матрицей</h1>
+        <p>Размер матрицы: <input type="number" id="matrixSize" min="1" max="10" value="4"></p>
+        <button onclick="createMatrixInputs()">Создать матрицу</button>
+        <div id="matrixInputs"></div>
+        <button onclick="calculateMatrix()" style="display:none; margin-top: 5px;"
+            id="calculateButton">Рассчитать</button>
+        <div id="matrixOutput"></div>
+    </div>
+
+    <script>
+        // Задание 1
+        var books = [
+            { title: "Война и мир", genre: "1", modern: false, russian: true },
+            { title: "Ночной дозор", genre: "3", modern: true, russian: true },
+            { title: "Гарри Поттер", genre: "3", modern: true, russian: false },
+            { title: "Шерлок Холмс", genre: "2", modern: false, russian: false },
+            { title: "Девушка в поезде", genre: "2", modern: true, russian: false }
+        ];
+
+        function recommendBook() {
+            var genre = document.getElementById("genre").value;
+            var modern = document.getElementById("modern").checked;
+            var russian = document.getElementById("russian").checked;
+
+            var recommendation = null;
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].genre === genre &&
+                    books[i].modern === modern &&
+                    books[i].russian === russian) {
+                    recommendation = books[i];
+                    break;
+                }
+            }
+
+            var output = document.getElementById("bookRecommendation");
+            if (recommendation) {
+                output.textContent = 'Предлагаем вам почитать - "' + recommendation.title + '"';
+            } else {
+                output.textContent = "К сожалению, не смогли подобрать вам книгу";
+            }
+        }
+
+        // Задание 2
+        function createMatrixInputs() {
+            var size = parseInt(document.getElementById("matrixSize").value);
+            if (isNaN(size) || size < 1 || size > 10) {
+                alert("Пожалуйста, введите корректный размер матрицы (от 1 до 10)");
+                return;
+            }
+
+            var matrixInputs = document.getElementById("matrixInputs");
+            matrixInputs.innerHTML = '';
+            matrixInputs.style.gridTemplateColumns = 'repeat(' + size + ', 1fr)';
+
+            for (var i = 0; i < size; i++) {
+                for (var j = 0; j < size; j++) {
+                    var input = document.createElement("input");
+                    input.type = "number";
+                    input.id = 'cell-' + i + '-' + j;
+                    matrixInputs.appendChild(input);
+                }
+            }
+
+            document.getElementById("calculateButton").style.display = "block";
+        }
+
+        function calculateMatrix() {
+            var size = parseInt(document.getElementById("matrixSize").value);
+            var matrix = [];
+            var diagonalSum = 0;
+            var rowSums = [];
+            for (var i = 0; i < size; i++) {
+                rowSums[i] = 0;
+            }
+
+            // Заполняю матрицу и затем подччитываю все суммы
+            for (var i = 0; i < size; i++) {
+                matrix[i] = [];
+                for (var j = 0; j < size; j++) {
+                    var value = parseInt(document.getElementById('cell-' + i + '-' + j).value);
+                    if (isNaN(value)) {
+                        alert('Пожалуйста, введите корректное число в ячейку [' + (i + 1) + '][' + (j + 1) + ']');
+                        return;
+                    }
+                    matrix[i][j] = value;
+                    rowSums[i] += value;
+                    if (i === j) {
+                        diagonalSum += value;
+                    }
+                }
+            }
+
+            // Вывод
+            var output = "<h2>Матрица:</h2>";
+            for (var i = 0; i < size; i++) {
+                for (var j = 0; j < size; j++) {
+                    output += matrix[i][j] + " ";
+                }
+                output += "<br>";
+            }
+            output += "<p>Сумма элементов по диагонали - " + diagonalSum + "</p>";
+            for (var i = 0; i < size; i++) {
+                output += "<p>Сумма элементов в строке №" + (i + 1) + " - " + rowSums[i] + "</p>";
+            }
+
+            document.getElementById("matrixOutput").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
