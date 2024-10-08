@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ JS по объектам</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Товары на рынке</h1>
+    <button onclick="showAllProducts()">Показать все товары</button>
+    <button onclick="getProductPrice()">Узнать цену товара</button>
+    <button onclick="calculatePurchase()">Рассчитать покупку</button>
+    <div id="output"></div>
+
+    <script>
+        // Задание 1: Функция для объединения массивов
+        function combineArrays(arr1, arr2) {
+            return arr1.concat(arr2);
+        }
+
+        // Использование функции для объединения массивов
+        const arr1 = [1, 3, 5];
+        const arr2 = [7, 9, 11];
+        console.log("Результат объединения массивов:", combineArrays(arr1, arr2));
+
+        // Задание 2: Массив объектов товаров
+        const products = [
+            { name: "яблоко", price: 3.5, count: 10 },
+            { name: "апельсин", price: 6, count: 14 },
+            { name: "банан", price: 5.1, count: 2 },
+            { name: "мандарин", price: 5.9, count: 9 },
+            { name: "груша", price: 1.3, count: 5 }
+        ];
+
+        // Функция для отображения всех товаров
+        function showAllProducts() {
+            let output = "";
+            products.forEach(product => {
+                output += `${product.name}: ${product.price} за кг\n`;
+            });
+            document.getElementById("output").innerText = output;
+        }
+
+        // Функция для получения цены товара
+        function getProductPrice() {
+            const productName = prompt("Введите название товара:");
+            const product = products.find(p => p.name.toLowerCase() === productName.toLowerCase());
+            if (product) {
+                document.getElementById("output").innerText = `Стоимость товара '${product.name}' - ${product.price} за кг`;
+            } else {
+                document.getElementById("output").innerText = "Товар не найден";
+            }
+        }
+
+        // Задание 3: Функция для расчета возможной покупки
+        function calculatePurchase() {
+            const money = parseFloat(prompt("Сколько у вас денег?"));
+            if (isNaN(money) || money <= 0) {
+                document.getElementById("output").innerText = "Пожалуйста, введите корректную сумму.";
+                return;
+            }
+
+            let output = "Вы можете купить:\n";
+            products.forEach(product => {
+                const amount = Math.floor(money / product.price);
+                if (amount > 0) {
+                    output += `${amount} кг ${product.name}\n`;
+                }
+            });
+            document.getElementById("output").innerText = output;
+        }
+    </script>
+</body>
+
+</html>
